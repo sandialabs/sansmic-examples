@@ -3,16 +3,16 @@ Example files for the sansmic software, moved to a git submodule to minimize siz
 
 Please visit the primary module repository at https://github.com/sandialabs/sansmic/.
 
-The 
-[license](LICENSE.md), 
+The
+[license](LICENSE.md),
 [copyright](COPYRIGHT.md),
 [code of conduct](CODE_OF_CONDUCT.md)
-and 
+and
 [security policy](SECURITY.md)
-for this repository are the same as for the parent 
+for this repository are the same as for the parent
 [sansmic](https://github.com/sandialabs/sansmic)
 repository and code base. This repository serves as the git submodue containing
-the example files. This does *not* mean that large files can be stored in this 
+the example files. This does *not* mean that large files can be stored in this
 repository; on the contrary, this repository is only separated so that it is easier
 to download and use the examples when sansmic has been installed via pip.
 

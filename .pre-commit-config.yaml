@@ -1,0 +1,48 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+ci:
+    autofix_prs: false
+    autoupdate_commit_msg: "ci: pre-commit auto-update"
+
+repos:
+
+    - repo: https://github.com/gitleaks/gitleaks
+      rev: v8.16.3
+      hooks:
+      - id: gitleaks
+
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.6.0
+      hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+
+    - repo: https://github.com/compilerla/conventional-pre-commit
+      rev: v3.4.0
+      hooks:
+        - id: conventional-pre-commit
+          stages: [commit-msg]
+          args: [
+              "build", # Changes to build system or external dependencies (omit from CHANGELOG - manually add if needed)
+              "ci",    # Changes to CI configuration files and scripts (omit from CHANGELOG - manually add if needed)
+              "chore", # Other changes that don't touch the source code (omit from CHANGELOG - manually add if needed)
+              "test", # Adding missing tests or correcting existing tests (does not change package code)
+              "fix",      # A bug fix (a patch-level version change)
+              "perf",     # A code change that improves performance (at-least patch-level, possibly minor version change)
+              "feat",     # A new feature or functionality (at-least minor, possibly major version change)
+              "refactor", # A change that does not add a feature nor fix a bug (could be major, minor or patch)
+              "docs",     # Documentation-only changes within the source code (no version level change)
+              "style",    # A code that does not change meaning of the code (no version level change)
+              "release",
+          ]
+
+    - repo: https://github.com/kynan/nbstripout
+      rev: 0.7.1
+      hooks:
+        - id: nbstripout
