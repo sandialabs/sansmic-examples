@@ -1,10 +1,12 @@
 Examples
 ========
 
-The following examples of how to use sansmic have been developed.
+The following Jupyter notebooks show how sansmic can be used from within
+python or within a Jupyter-Lab-type environment.
 
 
-.. toctree::
+.. nbgallery::
+    :name: rst-gallery
 
     basic-example/basic
     regression-tests/regression
