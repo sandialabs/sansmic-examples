@@ -198,3 +198,7 @@ html_theme_options = {
     ],
     "analytics": {"google_analytics_id": ga_token},
 }
+
+nbsphinx_thumbnails = {
+    'basic-example/basic': '_static/basic-thumbnail.png',
+}
