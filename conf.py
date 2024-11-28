@@ -8,6 +8,7 @@ import glob
 
 try:
     import sansmic
+
     version = os.environ.get("SANSMIC_SPHINX_VERSION", sansmic.__version__)
 except ImportError:
     doxygen_installed = False
@@ -23,9 +24,9 @@ project = "sansmic"
 copyright = "2024 National Technology and Engineering Solutions of Sandia, LLC. Under the terms of Contract DE-NA0003525 with NTESS, the U.S. Government retains certain rights in this software."
 author = "See AUTHORS.md"
 
-if version.startswith('v'):
+if version.startswith("v"):
     version = version[1:]
-    release = 'v' + version
+    release = "v" + version
 else:
     release = version
 
@@ -196,9 +197,13 @@ html_theme_options = {
         "theme-switcher",
         "navbar-icon-links",
     ],
+    "secondary_sidebar_items": {
+        "**": ["page-toc", "sourcelink"],
+        "examples/**": [],
+    },
     "analytics": {"google_analytics_id": ga_token},
 }
 
 nbsphinx_thumbnails = {
-    'basic-example/basic': '_static/basic-thumbnail.png',
+    "basic-example/basic": "/_static/basic-thumbnail.png",
 }
